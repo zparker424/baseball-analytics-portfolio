@@ -13,22 +13,10 @@
       padding: 20px;
     }
 
-    h1 {
-      text-align: center;
-      color: #002366;
-      font-size: 24px;
-      font-weight: 700;
-    }
+    h1 { text-align: center; color: #002366; font-size: 24px; font-weight: 700; }
+    p  { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; font-size: 15px; }
 
-    p {
-      text-align: center;
-      max-width: 700px;
-      margin: 10px auto 30px;
-      color: #555;
-      font-size: 15px;
-    }
-
-    /* ✅ Consistent section titles (matches page header font style) */
+    /* Section titles consistent with site headers */
     h2.section-title {
       text-align: center;
       color: #002366;
@@ -38,96 +26,43 @@
       letter-spacing: 0.2px;
     }
 
-    /* interactive chart container */
+    /* Interactive chart container */
     .iframe-wrap {
       position: relative;
       width: 95%;
       max-width: 1100px;
       margin: 24px auto;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
       background: #fff;
       border: 1px solid #e5e7eb;
     }
-
-    .iframe-wrap::before {
-      content: "";
-      display: block;
-      padding-top: 62%; /* 16:10 aspect ratio */
-    }
-
+    .iframe-wrap::before { content: ""; display: block; padding-top: 62%; } /* ~16:10 */
     .iframe-wrap iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      background: #fff;
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff;
     }
 
-    /* static chart style */
+    /* Static chart style */
     .chart {
-      display: block;
-      margin: 24px auto;
-      max-width: 95%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      background: #fff;
-      border: 1px solid #e5e7eb;
+      display: block; margin: 24px auto; max-width: 95%;
+      border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff; border: 1px solid #e5e7eb;
     }
 
-    /* unified navigation */
+    /* Bottom nav */
     .page-navigation {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      row-gap: 6px;
-      column-gap: 10px;
-      background: #f1f3f7;
-      padding: 18px 10px;
-      margin-top: 70px;
-      border-top: 1px solid #ddd;
-      font-size: 15px;
-      text-align: center;
+      display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+      row-gap: 6px; column-gap: 10px; background: #f1f3f7; padding: 18px 10px; margin-top: 70px;
+      border-top: 1px solid #ddd; font-size: 15px; text-align: center;
     }
+    .page-navigation a { color: #0047ab; text-decoration: none; font-weight: 600; white-space: nowrap; }
+    .page-navigation a:hover { color: #002366; text-decoration: underline; }
+    .page-navigation .current { color: #111; font-weight: 700; border-bottom: 2px solid #0047ab; cursor: default; white-space: nowrap; }
 
-    .page-navigation a {
-      color: #0047ab;
-      text-decoration: none;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+    footer { text-align: center; padding: 30px 15px; background: #f9fafc; font-size: 14px; color: #777; }
 
-    .page-navigation a:hover {
-      color: #002366;
-      text-decoration: underline;
-    }
-
-    .page-navigation .current {
-      color: #111;
-      font-weight: 700;
-      border-bottom: 2px solid #0047ab;
-      cursor: default;
-      white-space: nowrap;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      background: #f9fafc;
-      font-size: 14px;
-      color: #777;
-    }
-
-    @media (max-width: 750px) {
-      .page-navigation {
-        flex-direction: column;
-        gap: 6px;
-      }
-    }
+    @media (max-width: 750px) { .page-navigation { flex-direction: column; gap: 6px; } }
   </style>
 </head>
 
@@ -170,36 +105,32 @@
     <a href="../stolen_bases_2024_2025/index.html">Next →</a>
   </nav>
 
-  <footer>
-    © 2025 Zachary Parker | Built with Python &amp; Plotly
-  </footer>
+  <footer>© 2025 Zachary Parker | Built with Python &amp; Plotly</footer>
 
-  <!-- ✅ Fix for Plotly title alignment and styling -->
+  <!-- Center + style Plotly titles inside the iframes -->
   <script>
+    function restylePlotlyIn(frame) {
+      try {
+        const w = frame.contentWindow;
+        const d = w.document;
+        const graphs = d.querySelectorAll('.plotly-graph-div');
+        if (!graphs.length || !w.Plotly) return;
+
+        graphs.forEach(div => {
+          w.Plotly.relayout(div, {
+            'title.x': 0.5,
+            'title.font.size': 18,
+            'title.font.family': 'Arial, sans-serif',
+            'title.font.color': '#002366'
+          });
+        });
+      } catch (e) {
+        console.warn('Plotly restyle failed:', e);
+      }
+    }
+
     document.querySelectorAll('.iframe-wrap iframe').forEach(frame => {
-      frame.addEventListener('load', () => {
-        try {
-          const css = `
-            <style>
-              /* Center Plotly titles and apply consistent site styling */
-              text.gtitle, .main-svg .gtitle {
-                text-anchor: middle !important;
-                fill: #002366 !important;
-                font-family: Arial, sans-serif !important;
-                font-size: 18px !important;
-                font-weight: 700 !important;
-              }
-              .main-svg {
-                margin: 0 auto !important;
-                display: block !important;
-              }
-            </style>`;
-          const doc = frame.contentDocument || frame.contentWindow.document;
-          doc.head.insertAdjacentHTML('beforeend', css);
-        } catch (err) {
-          console.warn('Could not restyle iframe:', err);
-        }
-      });
+      frame.addEventListener('load', () => restylePlotlyIn(frame));
     });
   </script>
 </body>
