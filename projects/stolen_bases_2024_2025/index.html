@@ -1,80 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2024–2025 Stolen Base Trends</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f9fafc;
+      background-color: #f9fafc;
       color: #111;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
-    h1 { text-align: center; color: #002366; }
-    p  { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; }
+
+    header {
+      text-align: center;
+      padding: 40px 15px 10px;
+    }
+
+    h1 {
+      color: #002366;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    p.subhead {
+      color: #444;
+      font-size: 15px;
+      margin-top: 0;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 18px;
+      color: #002366;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
     .chart {
       display: block;
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 25px auto;
+      max-width: 800px;
+      width: 95%;
+      border-radius: 10px;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
     .page-navigation {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       background: #f1f3f7;
-      padding: 18px 12px;
-      margin-top: 70px;
-      border-top: 1px solid #ddd;
-      font-size: 15px;
+      text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
     }
+
     .page-navigation a {
-      color: #0047ab;
+      color: #002366;
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s ease;
+      font-weight: bold;
+      margin: 0 10px;
     }
-    .page-navigation a:hover { color: #002366; text-decoration: underline; }
-    .page-navigation .current {
-      color: #111;
-      font-weight: 700;
+
+    .page-navigation a:hover {
       text-decoration: underline;
-      cursor: default;
     }
 
     footer {
       text-align: center;
-      padding: 30px 15px;
-      background: #f9fafc;
+      padding: 30px;
+      background: #f1f3f7;
       font-size: 14px;
-      color: #777;
+      color: #555;
+      margin-top: 100px;
+    }
+
+    body {
+      margin-bottom: 70px;
     }
   </style>
 </head>
 
 <body>
-  <h1>2024–2025 Stolen Base Trends</h1>
-  <p>Tracking year-over-year stolen-base attempts and success rates across MLB seasons.</p>
+  <header>
+    <h1>2024–2025 Stolen Base Trends</h1>
+    <p class="subhead">
+      Comparing year-over-year stolen base changes, player differentials, and team-level patterns.
+    </p>
+  </header>
 
-  <img src="data/Stolen_Base_Increases.png" class="chart" alt="SB Increase">
-  <img src="data/Stolen_Base_Decrease.png" class="chart" alt="SB Decrease">
-  <img src="data/Total_Stolen_Bases_2025.png" class="chart" alt="Total SB 2025">
-  <img src="data/YoY_Stolen_Bases_Changes.png" class="chart" alt="YoY SB Change">
+  <h2 class="section-title">Stolen Base Changes: 2024 vs 2025</h2>
+  <img src="data/Stolen_Base_Changes_2024_vs_2025.png" alt="Stolen Base Changes 2024 vs 2025" class="chart" />
 
-  <nav class="page-navigation" aria-label="Page navigation">
-    <a href="../clutch_risp_2025/index.html">← Back</a> |
-    <a href="../../index.html">Home Page</a> |
-    <a href="../clutch_risp_2025/index.html">2025 RISP + High-Leverage OPS</a> |
-    <span class="current">2024–2025 Stolen Base Trends</span> |
-    <a href="../sundays_vs_fridays/index.html">Friday vs Sunday Hitting Analysis</a> |
+  <h2 class="section-title">Largest Increases in Stolen Bases</h2>
+  <img src="data/Largest_Increases_in_SB.png" alt="Largest Increases in Stolen Bases" class="chart" />
+
+  <h2 class="section-title">Largest Decreases in Stolen Bases</h2>
+  <img src="data/Largest_Decreases_in_SB.png" alt="Largest Decreases in Stolen Bases" class="chart" />
+
+  <h2 class="section-title">Team-Level Stolen Base Totals</h2>
+  <img src="data/Team_Stolen_Base_Totals.png" alt="Team-Level Stolen Base Totals" class="chart" />
+
+  <div class="page-navigation">
+    <a href="../../index.html">← Home</a> |
     <a href="../sundays_vs_fridays/index.html">Next →</a>
-  </nav>
+  </div>
 
   <footer>
     © 2025 Zachary Parker | Built with Python &amp; Plotly
