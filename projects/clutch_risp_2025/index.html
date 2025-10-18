@@ -12,29 +12,63 @@
       margin: 0;
       padding: 20px;
     }
-    h1 { text-align: center; color: #002366; }
-    h2 { color: #333; margin-top: 40px; text-align: center; }
-    p { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; }
+
+    h1 {
+      text-align: center;
+      color: #002366;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      max-width: 700px;
+      margin: 10px auto 30px;
+      color: #555;
+    }
+
     .chart {
       display: block;
       margin: 20px auto;
       max-width: 90%;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    .footer-nav {
-      position: fixed; bottom: 0; left: 0; width: 100%;
-      background: #002366; display: flex; justify-content: center;
-      flex-wrap: wrap; gap: 25px; padding: 12px 0;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-      z-index: 100;
+
+    /* Footer navigation styling */
+    .page-navigation {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #002366;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 10;
     }
-    .footer-nav a {
-      color: #fff; text-decoration: none; font-weight: 600;
-      font-family: Arial, sans-serif; font-size: 15px; transition: opacity 0.3s;
+
+    .page-navigation a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.3s;
     }
-    .footer-nav a:hover { opacity: 0.8; }
-    body { margin-bottom: 70px; }
+
+    .page-navigation a:hover {
+      opacity: 0.8;
+    }
+
+    body {
+      margin-bottom: 80px; /* prevents charts from being hidden */
+    }
   </style>
 </head>
 
@@ -42,17 +76,18 @@
   <h1>2025 RISP + High-Leverage OPS Analysis</h1>
   <p>Analyzing clutch performance vs overall OPS across MLB hitters.</p>
 
-  <img src="data/Yankees_2025_Clutch_Performance.png" class="chart" alt="Yankees Clutch">
-  <img src="data/Mets_2025_Clutch_Performance.png" class="chart" alt="Mets Clutch">
-  <img src="data/Tigers_2025_Clutch_Performance.png" class="chart" alt="Tigers Clutch">
-  <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch">
-  <img src="data/Top_15_Hitters_in_Clutch.png" class="chart" alt="Top 15 Hitters">
+  <img src="data/Yankees_2025_Clutch_Performance.png" class="chart" alt="Yankees Clutch Performance">
+  <img src="data/Mets_2025_Clutch_Performance.png" class="chart" alt="Mets Clutch Performance">
+  <img src="data/Tigers_2025_Clutch_Performance.png" class="chart" alt="Tigers Clutch Performance">
+  <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch Performance">
+  <img src="data/Top_15_Hitters_in_Clutch.png" class="chart" alt="Top 15 Hitters in Clutch">
   <img src="data/Top_Bottom_10_Hitters_by_Clutch.png" class="chart" alt="Top and Bottom 10 Hitters">
   <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart" alt="Yankees Overall vs Clutch">
 
-  <footer class="footer-nav">
-    <a href="../stolen_bases_2024_2025/index.html">Stolen Bases</a>
-    <a href="../sundays_vs_fridays/index.html">Fridays vs Sundays</a>
-  </footer>
+  <!-- ✅ Sticky footer navigation -->
+  <div class="page-navigation">
+    <a href="../../index.html">← Home</a>
+    <a href="../stolen_bases_2024_2025/index.html">Next →</a>
+  </div>
 </body>
 </html>
