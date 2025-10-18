@@ -33,7 +33,7 @@
       flex-direction: column;
       align-items: center;
       gap: 40px;
-      padding: 40px 15px 100px;
+      padding: 40px 15px 120px;
     }
     .card {
       background: #fff;
@@ -71,12 +71,43 @@
       font-weight: bold;
     }
     .card a:hover { text-decoration: underline; }
+
+    /* Footer and Nav styling */
+    .page-navigation {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #002366;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .page-navigation a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: opacity 0.3s;
+    }
+    .page-navigation a:hover {
+      opacity: 0.8;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       background: #f1f3f7;
       font-size: 14px;
       color: #555;
+      margin-top: 100px;
+    }
+
+    body {
+      margin-bottom: 70px; /* space so content isn’t hidden behind nav */
     }
   </style>
 </head>
@@ -109,6 +140,12 @@
       <a href="projects/sundays_vs_fridays/index.html">View Analysis →</a>
     </div>
   </main>
+
+  <!-- ✅ Added Navigation Bar -->
+  <div class="page-navigation">
+    <span></span>
+    <a href="projects/clutch_risp_2025/index.html">Next →</a>
+  </div>
 
   <footer>
     © 2025 Zachary Parker | Built with Python &amp; Plotly
