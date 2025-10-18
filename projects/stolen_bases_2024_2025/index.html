@@ -12,25 +12,54 @@
       margin: 0;
       padding: 20px;
     }
+
     h1 { text-align: center; color: #002366; }
     h2 { color: #333; margin-top: 40px; text-align: center; }
-    p { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; }
+    p  { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; }
+
     .chart {
-      display: block; margin: 20px auto; max-width: 90%;
-      border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .footer-nav {
-      position: fixed; bottom: 0; left: 0; width: 100%;
-      background: #002366; display: flex; justify-content: center;
-      flex-wrap: wrap; gap: 25px; padding: 12px 0;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.1); z-index: 100;
+
+    /* 🔄 NEW bottom-only navigation (replaces any .footer-nav styles) */
+    .page-navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      background: #f1f3f7;
+      padding: 18px 12px;
+      margin-top: 60px;
+      border-top: 1px solid #ddd;
+      flex-wrap: wrap;
     }
-    .footer-nav a {
-      color: #fff; text-decoration: none; font-weight: 600;
-      font-family: Arial, sans-serif; font-size: 15px; transition: opacity 0.3s;
+    .page-navigation a {
+      color: #0047ab;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+      white-space: nowrap;
     }
-    .footer-nav a:hover { opacity: 0.8; }
-    body { margin-bottom: 70px; }
+    .page-navigation a:hover { color: #002366; text-decoration: underline; }
+    .page-navigation .meta {
+      font-weight: 600;
+      color: #666;
+      font-size: 13px;
+      margin-left: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      background: #f9fafc;
+      font-size: 14px;
+      color: #777;
+    }
   </style>
 </head>
 
@@ -43,9 +72,16 @@
   <img src="data/Total_Stolen_Bases_2025.png" class="chart" alt="Total SB 2025">
   <img src="data/YoY_Stolen_Bases_Changes.png" class="chart" alt="YoY SB Change">
 
-  <footer class="footer-nav">
-    <a href="../clutch_risp_2025/index.html">RISP + High Leverage</a>
-    <a href="../sundays_vs_fridays/index.html">Fridays vs Sundays</a>
+  <!-- ✅ Clean, scroll-bottom navigation with order + Home -->
+  <nav class="page-navigation" aria-label="Page navigation">
+    <a href="../clutch_risp_2025/index.html">← Previous: RISP + High Leverage</a>
+    <a href="../../index.html">Home</a>
+    <a href="../sundays_vs_fridays/index.html">Next: Fridays vs Sundays →</a>
+    <span class="meta">Page 2 of 3</span>
+  </nav>
+
+  <footer>
+    © 2025 Zachary Parker | Built with Python &amp; Plotly
   </footer>
 </body>
 </html>
