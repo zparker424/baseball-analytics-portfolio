@@ -52,88 +52,50 @@
       position: relative;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+    .card:hover { transform: translateY(-4px); }
 
-    /* Static image preview */
-    .card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-bottom: 3px solid #0047ab;
-    }
-
-    /* ✅ Interactive preview styling */
+    /* Slightly larger, zoomed-out preview area */
+    .card img,
     .preview-iframe {
-      position: relative;
       width: 100%;
-      height: 250px;
+      height: 300px;             /* up from 250 */
+      object-fit: contain;       /* show entire image cleanly */
       border-bottom: 3px solid #0047ab;
       background: #fff;
     }
 
     .preview-iframe iframe {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
-      height: 100%;
+      height: 300px;
       border: 0;
-      pointer-events: none; /* disables interaction so user clicks go to link */
+      pointer-events: none;
+      transform: scale(0.92);      /* subtle zoom-out effect */
+      transform-origin: center;
     }
 
-    .card h2 {
-      font-size: 20px;
-      color: #002366;
-      margin: 20px 0 8px;
-    }
+    .card h2 { font-size: 20px; color: #002366; margin: 20px 0 8px; }
+    .card p { font-size: 14px; color: #555; margin-bottom: 15px; padding: 0 20px; }
+    .card a { display: inline-block; margin-bottom: 20px; color: #0066cc; text-decoration: none; font-weight: bold; }
+    .card a:hover { text-decoration: underline; }
 
-    .card p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 15px;
-      padding: 0 20px;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #0066cc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .card a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer and navigation styling */
     .page-navigation {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      bottom: 0; left: 0; width: 100%;
       background: #002366;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       padding: 12px 30px;
-      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
       z-index: 10;
     }
 
     .page-navigation a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
+      color: #fff; text-decoration: none; font-weight: 600; font-size: 15px;
       transition: opacity 0.3s;
     }
 
-    .page-navigation a:hover {
-      opacity: 0.8;
-    }
+    .page-navigation a:hover { opacity: 0.8; }
 
     footer {
       text-align: center;
@@ -144,9 +106,7 @@
       margin-top: 100px;
     }
 
-    body {
-      margin-bottom: 70px; /* ensures content isn't hidden by nav bar */
-    }
+    body { margin-bottom: 70px; }
   </style>
 </head>
 
@@ -157,8 +117,6 @@
   </header>
 
   <main class="projects">
-
-    <!-- ✅ 1. RISP card with live preview -->
     <div class="card">
       <div class="preview-iframe">
         <iframe src="projects/clutch_risp_2025/data/clutch_scatter_all%20copy.html" title="RISP Chart Preview"></iframe>
@@ -168,7 +126,6 @@
       <a href="projects/clutch_risp_2025/index.html">View Analysis →</a>
     </div>
 
-    <!-- 2. Stolen Bases -->
     <div class="card">
       <img src="projects/stolen_bases_2024_2025/data/Total_Stolen_Bases_2025.png" alt="Stolen Bases Chart">
       <h2>2024–2025 Stolen Base Trends</h2>
@@ -176,17 +133,14 @@
       <a href="projects/stolen_bases_2024_2025/index.html">View Analysis →</a>
     </div>
 
-    <!-- 3. Friday vs Sunday -->
     <div class="card">
       <img src="projects/sundays_vs_fridays/data/Friday_vs_Sunday_Ops_Distribution.png" alt="OPS Distribution Chart">
       <h2>Friday vs Sunday Hitting Analysis</h2>
       <p>Comparing OPS distributions and player performance across game days.</p>
       <a href="projects/sundays_vs_fridays/index.html">View Analysis →</a>
     </div>
-
   </main>
 
-  <!-- ✅ Sticky footer navigation -->
   <div class="page-navigation">
     <span></span>
     <a href="projects/clutch_risp_2025/index.html">Next →</a>
