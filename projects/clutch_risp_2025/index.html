@@ -149,7 +149,6 @@
   <!-- Section 2: Team Comparisons -->
   <h2 class="section-title">Team Comparisons</h2>
 
-  <img src="data/Yankees_2025_Clutch_Performance.png" class="chart" alt="Yankees Clutch Performance">
   <img src="data/Mets_2025_Clutch_Performance.png" class="chart" alt="Mets Clutch Performance">
   <img src="data/Tigers_2025_Clutch_Performance.png" class="chart" alt="Tigers Clutch Performance">
   <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch Performance">
@@ -175,23 +174,28 @@
     © 2025 Zachary Parker | Built with Python &amp; Plotly
   </footer>
 
-  <!-- ✅ Inject styling into Plotly iframes for title consistency -->
+  <!-- ✅ Fix for Plotly title alignment and styling -->
   <script>
     document.querySelectorAll('.iframe-wrap iframe').forEach(frame => {
       frame.addEventListener('load', () => {
         try {
-          const plotlyTitleStyle = `
+          const css = `
             <style>
-              text.gtitle {
+              /* Center Plotly titles and apply consistent site styling */
+              text.gtitle, .main-svg .gtitle {
                 text-anchor: middle !important;
                 fill: #002366 !important;
                 font-family: Arial, sans-serif !important;
                 font-size: 18px !important;
                 font-weight: 700 !important;
               }
+              .main-svg {
+                margin: 0 auto !important;
+                display: block !important;
+              }
             </style>`;
           const doc = frame.contentDocument || frame.contentWindow.document;
-          doc.head.insertAdjacentHTML('beforeend', plotlyTitleStyle);
+          doc.head.insertAdjacentHTML('beforeend', css);
         } catch (err) {
           console.warn('Could not restyle iframe:', err);
         }
