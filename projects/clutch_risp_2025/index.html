@@ -16,9 +16,8 @@
     h1 {
       text-align: center;
       color: #002366;
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 700;
-      margin-bottom: 5px;
     }
 
     p {
@@ -26,18 +25,20 @@
       max-width: 700px;
       margin: 10px auto 30px;
       color: #555;
+      font-size: 15px;
     }
 
-    /* ✅ Consistent centered section titles */
-    .section-title {
+    /* ✅ Consistent section titles (matches page header font style) */
+    h2.section-title {
       text-align: center;
       color: #002366;
-      font-weight: 700;
       font-size: 20px;
-      margin-top: 60px;
-      margin-bottom: 20px;
+      font-weight: 700;
+      margin: 42px 0 12px;
+      letter-spacing: 0.2px;
     }
 
+    /* interactive chart container */
     .iframe-wrap {
       position: relative;
       width: 95%;
@@ -63,8 +64,10 @@
       width: 100%;
       height: 100%;
       border: 0;
+      background: #fff;
     }
 
+    /* static chart style */
     .chart {
       display: block;
       margin: 24px auto;
@@ -75,6 +78,7 @@
       border: 1px solid #e5e7eb;
     }
 
+    /* unified navigation */
     .page-navigation {
       display: flex;
       justify-content: center;
@@ -131,29 +135,68 @@
   <h1>2025 RISP + High-Leverage OPS Analysis</h1>
   <p>Analyzing clutch performance vs overall OPS across MLB hitters.</p>
 
-  <!-- Section 1 -->
-  <div class="section-title">Interactive Charts</div>
+  <!-- Section 1: Interactive Charts -->
+  <h2 class="section-title">Interactive Charts</h2>
+
   <div class="iframe-wrap">
     <iframe src="data/clutch_scatter_all%20copy.html" title="Interactive RISP Scatter (All Hitters)"></iframe>
   </div>
+
   <div class="iframe-wrap">
     <iframe src="data/clutch_scatter_yankees_2025%20copy.html" title="Interactive RISP Scatter (Yankees 2025)"></iframe>
   </div>
 
-  <!-- Section 2 -->
-  <div class="section-title">Team Comparisons</div>
+  <!-- Section 2: Team Comparisons -->
+  <h2 class="section-title">Team Comparisons</h2>
+
   <img src="data/Yankees_2025_Clutch_Performance.png" class="chart" alt="Yankees Clutch Performance">
   <img src="data/Mets_2025_Clutch_Performance.png" class="chart" alt="Mets Clutch Performance">
   <img src="data/Tigers_2025_Clutch_Performance.png" class="chart" alt="Tigers Clutch Performance">
   <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch Performance">
 
-  <!-- Section 3 -->
-  <div class="section-title">Player-Level Analysis</div>
+  <!-- Section 3: Player-Level Analysis -->
+  <h2 class="section-title">Player-Level Analysis</h2>
+
   <img src="data/Top_15_Hitters_in_Clutch.png" class="chart" alt="Top 15 Hitters in Clutch">
   <img src="data/Top_Bottom_10_Hitters_by_Clutch.png" class="chart" alt="Top and Bottom 10 Hitters by Clutch">
   <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart" alt="Yankees Overall vs Clutch">
 
+  <!-- Unified bottom navigation -->
   <nav class="page-navigation" aria-label="Page navigation">
     <a href="../../index.html">← Back</a> |
     <a href="../../index.html">Home Page</a> |
     <span class="current">2025 RISP + High-Leverage OPS</span> |
+    <a href="../stolen_bases_2024_2025/index.html">2024–2025 Stolen Base Trends</a> |
+    <a href="../sundays_vs_fridays/index.html">Friday vs Sunday Hitting Analysis</a> |
+    <a href="../stolen_bases_2024_2025/index.html">Next →</a>
+  </nav>
+
+  <footer>
+    © 2025 Zachary Parker | Built with Python &amp; Plotly
+  </footer>
+
+  <!-- ✅ Inject styling into Plotly iframes for title consistency -->
+  <script>
+    document.querySelectorAll('.iframe-wrap iframe').forEach(frame => {
+      frame.addEventListener('load', () => {
+        try {
+          const plotlyTitleStyle = `
+            <style>
+              text.gtitle {
+                text-anchor: middle !important;
+                fill: #002366 !important;
+                font-family: Arial, sans-serif !important;
+                font-size: 18px !important;
+                font-weight: 700 !important;
+              }
+            </style>`;
+          const doc = frame.contentDocument || frame.contentWindow.document;
+          doc.head.insertAdjacentHTML('beforeend', plotlyTitleStyle);
+        } catch (err) {
+          console.warn('Could not restyle iframe:', err);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
