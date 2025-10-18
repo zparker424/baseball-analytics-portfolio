@@ -29,7 +29,6 @@
       font-size: 15px;
     }
 
-    /* Section titles (consistent with RISP page) */
     .section-title {
       text-align: center;
       color: #002366;
@@ -39,7 +38,6 @@
       letter-spacing: 0.2px;
     }
 
-    /* Static chart card */
     .chart {
       display: block;
       margin: 24px auto;
@@ -50,7 +48,6 @@
       border: 1px solid #e5e7eb;
     }
 
-    /* Bottom navigation (same style as other pages) */
     .page-navigation {
       display: flex;
       justify-content: center;
@@ -65,13 +62,19 @@
       font-size: 15px;
       text-align: center;
     }
+
     .page-navigation a {
       color: #0047ab;
       text-decoration: none;
       font-weight: 600;
       white-space: nowrap;
     }
-    .page-navigation a:hover { color: #002366; text-decoration: underline; }
+
+    .page-navigation a:hover {
+      color: #002366;
+      text-decoration: underline;
+    }
+
     .page-navigation .current {
       color: #111;
       font-weight: 700;
@@ -100,29 +103,29 @@
 
   <!-- Section 1 -->
   <h2 class="section-title">OPS Distribution Across Days</h2>
-  <img src="data/Friday_vs_Sunday_Ops_Distribution.png"
+  <img src="data/friday_vs_sunday_ops_distribution.png"
        alt="OPS Distribution: Friday vs Sunday"
        class="chart" />
 
   <!-- Section 2 -->
   <h2 class="section-title">Top 10 Outlier Players by OPS</h2>
-  <img src="data/Top_10_Outlier_Players_by_OPS.png"
+  <img src="data/top_10_outlier_players_by_ops.png"
        alt="Top 10 Outlier Players by OPS"
        class="chart" />
 
   <!-- Section 3 -->
   <h2 class="section-title">Mean Statistic Comparison</h2>
-  <img src="data/Chart_Mean_Stat_Comparison.png"
+  <img src="data/mean_stat_comparison.png"
        alt="Mean Stat Comparison: Friday vs Sunday"
        class="chart" />
 
   <!-- Section 4 -->
   <h2 class="section-title">Distribution of OPS Differences</h2>
-  <img src="data/Distribution_of_OPS_Differences.png"
+  <img src="data/distribution_of_ops_differences.png"
        alt="Distribution of OPS Differences (Sunday - Friday)"
        class="chart" />
 
-  <!-- Bottom nav: last page (no Next link) -->
+  <!-- Bottom navigation -->
   <nav class="page-navigation" aria-label="Page navigation">
     <a href="../../index.html">← Back</a> |
     <a href="../../index.html">Home Page</a> |
@@ -134,5 +137,6 @@
   <footer>
     © 2025 Zachary Parker | Built with Python &amp; Plotly
   </footer>
+
 </body>
 </html>
