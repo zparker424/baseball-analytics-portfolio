@@ -6,107 +6,112 @@
   <title>Zachary Parker – Baseball Analytics Portfolio</title>
   <style>
     body {
-      font-family: "Inter", Arial, sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f9fafc;
+      color: #111;
       margin: 0;
-      padding: 40px 20px 80px 20px;
-      background-color: #f5f7fa;
-      color: #212529;
+      padding: 0;
+    }
+    header {
       text-align: center;
+      background: #fff;
+      padding: 50px 15px 20px;
+      border-bottom: 1px solid #ddd;
     }
-
     h1 {
-      color: #0d6efd;
-      font-size: 2rem;
-      margin-bottom: 10px;
+      color: #002366;
+      font-size: 30px;
+      margin-bottom: 5px;
     }
-
-    p {
-      max-width: 800px;
-      margin: 0 auto 40px;
-      font-size: 1.05rem;
-      line-height: 1.6;
+    p.subhead {
+      color: #444;
+      font-size: 16px;
+      margin-top: 5px;
     }
-
-    .project-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin: 30px auto;
-      width: 95%;
-      max-width: 700px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .projects {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 15px 100px;
     }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-card img {
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      max-width: 600px;
       width: 100%;
-      height: 200px;
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card img {
+      width: 100%;
+      height: 250px;
       object-fit: cover;
-      border-bottom: 3px solid #0d6efd;
+      border-bottom: 3px solid #0047ab;
     }
-
-    .project-card h2 {
-      font-size: 1.3rem;
-      color: #000;
-      margin: 18px 0 6px;
+    .card h2 {
+      font-size: 20px;
+      color: #002366;
+      margin: 20px 0 8px;
     }
-
-    .project-card p {
-      color: #6c757d;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+      padding: 0 20px;
     }
-
-    .project-card a {
+    .card a {
       display: inline-block;
       margin-bottom: 20px;
-      color: #0d6efd;
+      color: #0066cc;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
     }
-
-    .project-card a:hover {
-      text-decoration: underline;
-    }
-
+    .card a:hover { text-decoration: underline; }
     footer {
-      margin-top: 40px;
-      color: #6c757d;
-      font-size: 0.9rem;
+      text-align: center;
+      padding: 30px;
+      background: #f1f3f7;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 
 <body>
-  <h1>Zachary Parker – Baseball Analytics Portfolio</h1>
-  <p>Exploring data-driven insights into player performance, situational hitting, and game strategy.</p>
+  <header>
+    <h1>Zachary Parker – Baseball Analytics Portfolio</h1>
+    <p class="subhead">Exploring data-driven insights into player performance, situational hitting, and game strategy.</p>
+  </header>
 
-  <div class="project-card">
-    <img src="projects/clutch_risp_2025/data/Yankees_2025_Overall_vs_Clutch.png" alt="RISP Chart" />
-    <h2>2025 RISP + High-Leverage OPS</h2>
-    <p>Comparing clutch vs overall OPS across MLB hitters.</p>
-    <a href="projects/clutch_risp_2025/index.html">View Analysis →</a>
-  </div>
+  <main class="projects">
+    <div class="card">
+      <img src="projects/clutch_risp_2025/data/Yankees_2025_Clutch_Performance.png" alt="RISP Chart">
+      <h2>2025 RISP + High-Leverage OPS</h2>
+      <p>Comparing clutch vs overall OPS across MLB hitters.</p>
+      <a href="projects/clutch_risp_2025/index.html">View Analysis →</a>
+    </div>
 
-  <div class="project-card">
-    <img src="projects/sundays_vs_fridays/data/Chart_Mean_Stat_Comparison.png" alt="OPS Chart">
-    <h2>2024–2025 Stolen Base Trends</h2>
-    <p>Tracking year-over-year changes in MLB stolen base totals.</p>
-    <a href="projects/stolen_bases_2024_2025/index.html">View Analysis →</a>
-  </div>
+    <div class="card">
+      <img src="projects/stolen_bases_2024_2025/data/Total_Stolen_Bases_2025.png" alt="Stolen Bases Chart">
+      <h2>2024–2025 Stolen Base Trends</h2>
+      <p>Tracking year-over-year changes in MLB stolen-base totals.</p>
+      <a href="projects/stolen_bases_2024_2025/index.html">View Analysis →</a>
+    </div>
 
-  <div class="project-card">
-    <img src="projects/sundays_vs_fridays/data/Distribution_of_OPS_Differences.png" alt="Weekend OPS Chart" />
-    <h2>Friday vs. Sunday Hitting Analysis</h2>
-    <p>Exploring performance differences across weekend matchups.</p>
-    <a href="projects/sundays_vs_fridays/index.html">View Analysis →</a>
-  </div>
+    <div class="card">
+      <img src="projects/sundays_vs_fridays/data/Friday_vs_Sunday_Ops_Distribution.png" alt="OPS Distribution Chart">
+      <h2>Friday vs Sunday Hitting Analysis</h2>
+      <p>Comparing OPS distributions and player performance across game days.</p>
+      <a href="projects/sundays_vs_fridays/index.html">View Analysis →</a>
+    </div>
+  </main>
 
-  <footer>© 2025 Zachary Parker | Built with Python, Plotly, and pybaseball</footer>
+  <footer>
+    © 2025 Zachary Parker | Built with Python &amp; Plotly
+  </footer>
 </body>
 </html>

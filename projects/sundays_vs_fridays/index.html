@@ -1,68 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friday vs Sunday Hitting Analysis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9fafc;
-            color: #222;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #002366;
-        }
-        h2 {
-            color: #333;
-            margin-top: 40px;
-        }
-        p {
-            text-align: center;
-            font-size: 16px;
-            color: #555;
-            max-width: 700px;
-            margin: 10px auto 30px;
-        }
-        .chart {
-            display: block;
-            margin: 20px auto;
-            max-width: 90%;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        a.back {
-            display: block;
-            text-align: center;
-            margin-top: 50px;
-            color: #0073e6;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        a.back:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday vs Sunday Hitting Analysis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafc;
+      color: #111;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 { text-align: center; color: #002366; }
+    h2 { color: #333; margin-top: 40px; text-align: center; }
+    p { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; }
+    .chart {
+      display: block; margin: 20px auto; max-width: 90%;
+      border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .footer-nav {
+      position: fixed; bottom: 0; left: 0; width: 100%;
+      background: #002366; display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 25px; padding: 12px 0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1); z-index: 100;
+    }
+    .footer-nav a {
+      color: #fff; text-decoration: none; font-weight: 600;
+      font-family: Arial, sans-serif; font-size: 15px; transition: opacity 0.3s;
+    }
+    .footer-nav a:hover { opacity: 0.8; }
+    body { margin-bottom: 70px; }
+  </style>
 </head>
+
 <body>
-    <h1>Friday vs Sunday Hitting Analysis</h1>
-    <p>Analyzing OPS trends and player performance differences between Friday and Sunday MLB games.</p>
+  <h1>Friday vs Sunday Hitting Analysis</h1>
+  <p>Analyzing OPS trends and player performance differences between Friday and Sunday MLB games.</p>
 
-    <h2>OPS Distribution Across Days</h2>
-    <img src="data/Friday_vs_Sunday_Ops_Distribution.png" alt="OPS Distribution" class="chart">
+  <h2>OPS Distribution Across Days</h2>
+  <img src="data/Friday_vs_Sunday_Ops_Distribution.png" alt="OPS Distribution" class="chart">
 
-    <h2>Top 10 Outlier Players by OPS</h2>
-    <img src="data/Top_10_Outlier_Players_by_OPS.png" alt="Top 10 OPS Outliers" class="chart">
+  <h2>Top 10 Outlier Players by OPS</h2>
+  <img src="data/Top_10_Outlier_Players_by_OPS.png" alt="Top 10 OPS Outliers" class="chart">
 
-    <h2>Mean Statistic Comparison</h2>
-    <img src="data/Chart_Mean_Stat_Comparison.png" alt="Mean Stat Comparison" class="chart">
+  <h2>Mean Statistic Comparison</h2>
+  <img src="data/Chart_Mean_Stat_Comparison.png" alt="Mean Stat Comparison" class="chart">
 
-    <h2>Distribution of OPS Differences</h2>
-    <img src="data/Distribution_of_OPS_Differences.png" alt="OPS Differences Distribution" class="chart">
+  <h2>Distribution of OPS Differences</h2>
+  <img src="data/Distribution_of_OPS_Differences.png" alt="OPS Differences Distribution" class="chart">
 
-    <a href="../index.html" class="back">← Back to Portfolio</a>
+  <footer class="footer-nav">
+    <a href="../clutch_risp_2025/index.html">RISP + High Leverage</a>
+    <a href="../stolen_bases_2024_2025/index.html">Stolen Bases</a>
+  </footer>
 </body>
 </html>
