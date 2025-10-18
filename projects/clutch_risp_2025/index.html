@@ -50,7 +50,7 @@
       background: #fff;
       border: 1px solid #e5e7eb;
     }
-    .iframe-wrap::before { content: ""; display: block; padding-top: 62%; } /* ~16:10 aspect ratio */
+    .iframe-wrap::before { content: ""; display: block; padding-top: 62%; }
     .iframe-wrap iframe {
       position: absolute;
       top: 0; left: 0;
@@ -160,7 +160,7 @@
     © 2025 Zachary Parker | Built with Python &amp; Plotly
   </footer>
 
-  <!-- ✅ Center Plotly titles & remove right white space -->
+  <!-- ✅ Center Plotly titles & remove extra right margin -->
   <script>
     function restylePlotlyIn(frame) {
       try {
@@ -170,13 +170,15 @@
         if (!graphs.length || !w.Plotly) return;
 
         graphs.forEach(div => {
+          const hasColorbar = d.querySelector('.cbtitle') || d.querySelector('.colorbar');
+          const rightMargin = hasColorbar ? 40 : 10; // tighter margin if no legend
           w.Plotly.relayout(div, {
             'title.x': 0.5,
             'title.font.size': 18,
             'title.font.family': 'Arial, sans-serif',
             'title.font.color': '#002366',
             'margin.l': 60,
-            'margin.r': 40,   // ✅ trims right empty space
+            'margin.r': rightMargin,  // ✅ removes excess space
             'margin.t': 80,
             'margin.b': 60
           });
