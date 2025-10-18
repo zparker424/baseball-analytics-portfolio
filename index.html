@@ -7,30 +7,49 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      background: #f2f4f7;
       color: #0b0c0c;
-      margin: 40px;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
-    h1 {
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2 {
+      text-align: center;
       color: #001f3f;
     }
-    h2 {
-      color: #004080;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
     }
+
+    li {
+      margin: 16px 0;
+      text-align: center;
+    }
+
     a {
-      color: #0040ff;
+      color: #0056b3;
+      font-weight: bold;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    ul {
-      list-style-type: disc;
-      margin-top: 10px;
-    }
+
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
+      text-align: center;
       font-size: 0.9em;
       color: #555;
     }
@@ -38,18 +57,20 @@
 </head>
 
 <body>
-  <h1>Zachary Parker – Baseball Analytics Portfolio</h1>
-  <p>Exploring data-driven insights into player performance, situational hitting, and game strategy.</p>
+  <div class="container">
+    <h1>Zachary Parker – Baseball Analytics Portfolio</h1>
+    <p style="text-align:center;">Exploring data-driven insights into player performance, situational hitting, and game strategy.</p>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="projects/clutch_risp_2025/index.html">2025 RISP + High-Leverage OPS Analysis</a></li>
-    <li><a href="projects/stolen_bases_2024_2025/index.html">2024–2025 Stolen Base Trends</a></li>
-    <li><a href="projects/sundays_vs_fridays/index.html">Friday vs. Sunday Hitting Analysis</a></li>
-  </ul>
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="projects/clutch_risp_2025/index.html">2025 RISP + High-Leverage OPS Analysis</a></li>
+      <li><a href="projects/stolen_bases_2024_2025/index.html">2024–2025 Stolen Base Trends</a></li>
+      <li><a href="projects/sundays_vs_fridays/index.html">Friday vs. Sunday Hitting Analysis</a></li>
+    </ul>
 
-  <footer>
-    © 2025 Zachary Parker. Built with Python, Plotly, and pybaseball.
-  </footer>
+    <footer>
+      <p>© 2025 Zachary Parker | Built with Python & Plotly</p>
+    </footer>
+  </div>
 </body>
 </html>
