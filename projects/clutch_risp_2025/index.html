@@ -12,6 +12,7 @@
       margin: 0;
       padding: 20px;
     }
+
     h1 { text-align: center; color: #002366; }
     p  { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; }
 
@@ -23,30 +24,39 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Clean nav styling */
+    /* Clean unified navigation */
     .page-navigation {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 14px;
+      row-gap: 6px;
+      column-gap: 10px;
       background: #f1f3f7;
-      padding: 18px 12px;
+      padding: 18px 10px;
       margin-top: 70px;
       border-top: 1px solid #ddd;
       font-size: 15px;
+      text-align: center;
     }
+
     .page-navigation a {
       color: #0047ab;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.2s ease;
+      white-space: nowrap;
     }
-    .page-navigation a:hover { color: #002366; text-decoration: underline; }
+
+    .page-navigation a:hover {
+      color: #002366;
+      text-decoration: underline;
+    }
+
     .page-navigation .current {
       color: #111;
       font-weight: 700;
-      text-decoration: underline;
+      border-bottom: 2px solid #0047ab;
       cursor: default;
     }
 
@@ -56,6 +66,14 @@
       background: #f9fafc;
       font-size: 14px;
       color: #777;
+    }
+
+    /* Responsive adjustment for narrow screens */
+    @media (max-width: 750px) {
+      .page-navigation {
+        flex-direction: column;
+        gap: 6px;
+      }
     }
   </style>
 </head>
@@ -72,6 +90,7 @@
   <img src="data/Top_Bottom_10_Hitters_by_Clutch.png" class="chart" alt="Top and Bottom 10">
   <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart" alt="Yankees Overall vs Clutch">
 
+  <!-- ✅ Full, consistent footer navigation -->
   <nav class="page-navigation" aria-label="Page navigation">
     <a href="../../index.html">← Back</a> |
     <a href="../../index.html">Home Page</a> |
@@ -82,7 +101,7 @@
   </nav>
 
   <footer>
-    © 2025 Zachary Parker | Built with Python &amp; Plotly
+    © 2025 Zachary Parker | Built with Python & Plotly
   </footer>
 </body>
 </html>
