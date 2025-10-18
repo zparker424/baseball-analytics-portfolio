@@ -1,81 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zachary Parker – Baseball Analytics Portfolio</title>
-  <!-- ✅ Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
     body {
       background-color: #f2f4f7;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    h1, h2 {
-      color: #002147;
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, #002147 0%, #0d6efd 100%);
+      color: #fff;
+      padding: 90px 20px;
+      border-radius: 0 0 30px 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
+
+    .hero h1 {
+      font-weight: 700;
+      font-size: 2.3rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .project-card {
+      border: none;
+      border-radius: 18px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
     footer {
       margin-top: 60px;
       color: #6c757d;
     }
-    .card {
-      border: none;
-      border-radius: 12px;
-    }
-    .list-group-item {
-      background: transparent;
-      border: none;
-      font-size: 1.05rem;
-    }
-    .list-group-item a {
+
+    a.project-link {
       color: #0d6efd;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }
-    .list-group-item a:hover {
+
+    a.project-link:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 
-<body class="bg-light">
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Zachary Parker – Baseball Analytics Portfolio</h1>
+    <p>Exploring data-driven insights into player performance, situational hitting, and game strategy.</p>
+  </section>
+
+  <!-- Project Section -->
   <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold text-primary">
-        Zachary Parker – Baseball Analytics Portfolio
-      </h1>
-      <p class="lead text-secondary">
-        Exploring data-driven insights into player performance, situational hitting, and game strategy.
-      </p>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card project-card p-4 shadow-sm bg-white">
+          <h2 class="text-center mb-4 text-dark">Projects</h2>
+          <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item bg-transparent">
+              <a href="projects/clutch_risp_2025/index.html" class="project-link">
+                2025 RISP + High-Leverage OPS Analysis
+              </a>
+            </li>
+            <li class="list-group-item bg-transparent">
+              <a href="projects/stolen_bases_2024_2025/index.html" class="project-link">
+                2024–2025 Stolen Base Trends
+              </a>
+            </li>
+            <li class="list-group-item bg-transparent">
+              <a href="projects/sundays_vs_fridays/index.html" class="project-link">
+                Friday vs. Sunday Hitting Analysis
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="card shadow-sm p-4">
-      <h2 class="text-center mb-4">Projects</h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item text-center">
-          <a href="projects/clutch_risp_2025/index.html">
-            2025 RISP + High-Leverage OPS Analysis
-          </a>
-        </li>
-        <li class="list-group-item text-center">
-          <a href="projects/stolen_bases_2024_2025/index.html">
-            2024–2025 Stolen Base Trends
-          </a>
-        </li>
-        <li class="list-group-item text-center">
-          <a href="projects/sundays_vs_fridays/index.html">
-            Friday vs. Sunday Hitting Analysis
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <footer class="text-center small">
+    <footer class="text-center small mt-5">
       © 2025 Zachary Parker | Built with Python & Plotly
     </footer>
   </div>
 
-  <!-- ✅ Bootstrap JS (optional, for animations/components) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
