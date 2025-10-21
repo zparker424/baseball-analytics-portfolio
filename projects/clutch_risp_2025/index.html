@@ -5,48 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2025 RISP + High-Leverage OPS Analysis</title>
   <link rel="stylesheet" href="../../style.css" />
-  <style>
-    /* Page-specific upgrades for depth and stronger blue tone */
-    body {
-      background: linear-gradient(180deg, #cfdafe 0%, #e6ecff 70%);
-    }
-
-    .chart {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-      border: 1px solid #c4cff7;
-    }
-
-    .iframe-wrap {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-      border: 1px solid #c4cff7;
-    }
-
-    .page-navigation {
-      background: #e3e7f4;
-      border-top: 2px solid #c2c9e2;
-      padding: 14px 0;
-      letter-spacing: 0.3px;
-      margin-top: 50px;
-    }
-
-    .page-navigation a {
-      color: #0047ab;
-      font-weight: 700;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .page-navigation a:hover { text-decoration: underline; }
-
-    .page-navigation .current {
-      color: #000;
-      font-weight: 800;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-  </style>
 </head>
-
 <body>
   <header>
     <h1>2025 RISP + High-Leverage OPS Analysis</h1>
@@ -85,34 +44,29 @@
     <a href="../stolen_bases_2024_2025/index.html">Next →</a>
   </div>
 
-  <footer>
-    © 2025 Zachary Parker | Built with Python &amp; Plotly
-  </footer>
+  <footer>© 2025 Zachary Parker | Built with Python &amp; Plotly</footer>
 
   <script>
-    /* Restyle Plotly charts inside iframes for consistent look */
+    // Keep your Plotly restyle for consistent margins/titles
     function restylePlotlyIn(frame) {
       try {
-        const w = frame.contentWindow;
-        const d = w.document;
+        const w = frame.contentWindow, d = w.document;
         const graphs = d.querySelectorAll('.plotly-graph-div');
         if (!graphs.length || !w.Plotly) return;
         graphs.forEach(div => {
-          const hasColorbar = d.querySelector('.cbtitle') || d.querySelector('.colorbar');
-          const rightMargin = hasColorbar ? 40 : 10;
+          const hasColorbar = d.querySelector('.cbtitle,.colorbar');
           w.Plotly.relayout(div, {
             'title.x': 0.5,
             'title.font.size': 18,
             'title.font.family': 'Arial, sans-serif',
-            'title.font.color': '#002366',
-            'margin.l': 60, 'margin.r': rightMargin, 'margin.t': 80, 'margin.b': 60
+            'title.font.color': '#001a66',
+            'margin.l': 60, 'margin.r': hasColorbar ? 40 : 10, 'margin.t': 80, 'margin.b': 60
           });
         });
-      } catch (e) { console.warn('Plotly restyle failed:', e); }
+      } catch (e) { /* ignore */ }
     }
-    document.querySelectorAll('.iframe-wrap iframe').forEach(frame => {
-      frame.addEventListener('load', () => restylePlotlyIn(frame));
-    });
+    document.querySelectorAll('.iframe-wrap iframe')
+      .forEach(f => f.addEventListener('load', () => restylePlotlyIn(f)));
   </script>
 </body>
 </html>

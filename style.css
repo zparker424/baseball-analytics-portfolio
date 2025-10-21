@@ -1,6 +1,6 @@
 /* =========================================
    Zachary Parker | Baseball Analytics Portfolio
-   FINAL COOL ROYAL BLUE / DARK BLUE THEME — OCT 2025
+   FINAL DARK ROYAL / COOL BLUE THEME — OCT 2025
    ========================================= */
 
 /* --- GLOBAL --- */
@@ -12,18 +12,18 @@ body {
   padding: 0;
 }
 
-/* --- HEADERS --- */
+/* --- HEADER SECTION --- */
 header {
   text-align: center;
   padding: 60px 15px 10px;
 }
 
 h1 {
-  color: #f0f3ff;
+  color: #000; /* bold black header */
   font-size: 28px;
-  font-weight: 800;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 900;
   margin-bottom: 10px;
+  text-shadow: none;
 }
 
 p.subhead {
@@ -32,6 +32,7 @@ p.subhead {
   max-width: 750px;
   margin: 0 auto;
   line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* --- SECTION TITLES --- */
@@ -127,6 +128,7 @@ main.projects {
   color: #001a66;
   font-size: 18px;
   margin: 12px 0 6px;
+  font-weight: 700;
 }
 
 .card p {
@@ -152,7 +154,7 @@ main.projects {
   color: #fff;
 }
 
-/* --- NAVIGATION BAR (Matching Cool Blue) --- */
+/* --- NAVIGATION BAR (Matching Blue) --- */
 .page-navigation {
   position: static;
   background: #e4e8fa;
