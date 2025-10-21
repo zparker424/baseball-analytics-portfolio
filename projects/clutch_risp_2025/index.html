@@ -4,93 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2025 RISP + High-Leverage OPS Analysis</title>
+  <link rel="stylesheet" href="../../style.css" />
   <style>
+    /* Page-specific upgrades for depth and stronger blue tone */
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #f2f5fc 0%, #f9fafc 80%);
-      color: #111;
-      margin: 0;
-      padding: 0;
-    }
-
-    header { text-align: center; padding: 45px 15px 10px; }
-
-    h1 { color: #002366; font-size: 26px; margin-bottom: 6px; }
-
-    p.subhead {
-      color: #444;
-      font-size: 15px;
-      max-width: 750px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-
-    h2.section-title {
-      text-align: center;
-      font-size: 18px;
-      color: #002366;
-      font-weight: bold;
-      margin-top: 40px;
-    }
-
-    p.subtitle {
-      text-align: center;
-      color: #444;
-      font-size: 14px;
-      margin: 4px 0 0;
-    }
-
-    .iframe-wrap {
-      position: relative;
-      width: 95%;
-      max-width: 1000px;
-      margin: 20px auto 30px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid #dbe3f3;
-    }
-
-    .iframe-wrap::before { content: ""; display: block; padding-top: 62%; }
-
-    .iframe-wrap iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-      background: #fff;
+      background: linear-gradient(180deg, #cfdafe 0%, #e6ecff 70%);
     }
 
     .chart {
-      display: block;
-      margin: 25px auto;
-      max-width: 800px;
-      width: 95%;
-      border-radius: 10px;
-      background: #fff;
-      padding: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      border: 1px solid #c4cff7;
     }
 
-    /* --- NAVIGATION BAR --- */
+    .iframe-wrap {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      border: 1px solid #c4cff7;
+    }
+
     .page-navigation {
-      background: #f2f4f8;
-      text-align: center;
-      padding: 10px 0;
-      border-top: 1px solid #cdd3e2;
-      font-size: 15px;
-      font-weight: 600;
-      position: fixed;
-      bottom: 0; left: 0;
-      width: 100%;
+      background: #e3e7f4;
+      border-top: 2px solid #c2c9e2;
+      padding: 14px 0;
+      letter-spacing: 0.3px;
+      margin-top: 50px;
     }
 
     .page-navigation a {
       color: #0047ab;
-      text-decoration: none;
       font-weight: 700;
-      margin: 0 8px;
+      text-decoration: none;
+      margin: 0 10px;
     }
 
     .page-navigation a:hover { text-decoration: underline; }
@@ -100,20 +43,6 @@
       font-weight: 800;
       text-decoration: underline;
       text-underline-offset: 3px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 15px 90px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    body { margin-bottom: 90px; }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 22px; }
-      h2.section-title { font-size: 16px; }
     }
   </style>
 </head>
@@ -142,7 +71,7 @@
   <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch Performance">
 
   <h2 class="section-title">Player Level Analysis</h2>
-  <p class="subtitle">Leaders and laggards showing the largest clutch-performance deltas for further regression evaluation.</p>
+  <p class="subtitle">Leaders and laggards showing the largest clutch-performance deltas for regression evaluation.</p>
   <img src="data/Top_15_Hitters_in_Clutch.png" class="chart" alt="Top 15 Hitters in Clutch">
   <img src="data/Top_Bottom_10_Hitters_by_Clutch.png" class="chart" alt="Top and Bottom 10 Hitters by Clutch">
   <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart" alt="Yankees Overall vs Clutch">
@@ -160,8 +89,8 @@
     © 2025 Zachary Parker | Built with Python &amp; Plotly
   </footer>
 
-  <!-- Plotly iframe restyle for consistent visuals -->
   <script>
+    /* Restyle Plotly charts inside iframes for consistent look */
     function restylePlotlyIn(frame) {
       try {
         const w = frame.contentWindow;

@@ -4,135 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zachary Parker | Baseball Analytics Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* --- GLOBAL --- */
+    /* Add homepage-specific gradient override */
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #e9eefb 0%, #f9fafc 60%);
-      color: #111;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      text-align: center;
-      padding: 45px 15px 15px;
-    }
-
-    h1 {
-      color: #002366;
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    p.subhead {
-      color: #333;
-      font-size: 15px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    /* --- PROJECT GRID --- */
-    main.projects {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
-      padding: 30px 20px 90px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 14px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      width: 310px;
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      border: 1px solid #dbe3f3;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-      border-color: #0047ab;
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      background: #cfd8ee;
-    }
-
-    .card h2 {
-      color: #002366;
-      font-size: 18px;
-      margin: 12px 0 6px;
-    }
-
-    .card p {
-      color: #444;
-      font-size: 14px;
-      margin: 0 15px 14px;
-      line-height: 1.4;
-    }
-
-    .card a {
-      display: inline-block;
-      padding: 7px 14px;
-      color: #002366;
-      font-weight: bold;
-      text-decoration: none;
-      border: 1px solid #002366;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .card a:hover {
-      background: #002366;
-      color: #fff;
-    }
-
-    /* --- NAVIGATION --- */
-    .page-navigation {
-      background: #f2f4f8;
-      text-align: center;
-      padding: 10px 0;
-      border-top: 1px solid #cdd3e2;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      font-size: 15px;
-    }
-
-    .page-navigation a {
-      color: #0047ab;
-      font-weight: 700;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .page-navigation a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 15px 90px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    body {
-      margin-bottom: 80px;
-    }
-
-    @media (max-width: 768px) {
-      .card { width: 90%; }
-      h1 { font-size: 24px; }
+      background: linear-gradient(180deg, #dbe5ff 0%, #f3f5ff 70%);
     }
   </style>
 </head>
@@ -146,7 +22,6 @@
   </header>
 
   <main class="projects">
-
     <!-- Automated Strike Zone Analysis -->
     <div class="card">
       <img src="projects/abs_zone_impact_2024/data/ABS%20vs%20Human%20Umpire%20Heat%20Map.png" alt="Automated Strike Zone Analysis" />
@@ -157,7 +32,7 @@
 
     <!-- 2025 RISP + High-Leverage OPS -->
     <div class="card">
-      <img src="projects/clutch_risp_2025/data/RISP_Leverage_Preview.png" alt="2025 RISP + High-Leverage OPS" />
+      <img src="projects/clutch_risp_2025/data/clutch_scatter_all%20copy.html" alt="2025 RISP + High-Leverage OPS" />
       <h2>2025 RISP + High-Leverage OPS</h2>
       <p>Analyzing clutch performance versus overall OPS to highlight hitters who excel or regress in high-pressure moments.</p>
       <a href="projects/clutch_risp_2025/index.html">View Analysis →</a>
@@ -178,9 +53,9 @@
       <p>Comparing player OPS and situational hitting between Friday and Sunday games to evaluate fatigue and preparation effects.</p>
       <a href="projects/sundays_vs_fridays/index.html">View Analysis →</a>
     </div>
-
   </main>
 
+  <!-- ✅ Navigation Bar now above footer -->
   <div class="page-navigation">
     <a href="projects/abs_zone_impact_2024/index.html">Next →</a>
   </div>
