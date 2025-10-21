@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zachary Parker | Baseball Analytics Portfolio</title>
   <style>
+    /* --- GLOBAL --- */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9fafc;
+      background: linear-gradient(180deg, #e9eefb 0%, #f9fafc 60%);
       color: #111;
       margin: 0;
       padding: 0;
@@ -15,54 +16,54 @@
 
     header {
       text-align: center;
-      padding: 40px 15px 10px;
+      padding: 45px 15px 15px;
     }
 
     h1 {
       color: #002366;
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 6px;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
 
     p.subhead {
-      color: #444;
+      color: #333;
       font-size: 15px;
-      margin-top: 0;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
+    /* --- PROJECT GRID --- */
     main.projects {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 30px 10px 80px;
+      gap: 28px;
+      padding: 30px 20px 90px;
     }
 
     .card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      width: 300px;
-      padding-bottom: 15px;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      width: 310px;
+      overflow: hidden;
       text-align: center;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      border: 1px solid #dbe3f3;
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      border-color: #0047ab;
     }
 
     .card img {
       width: 100%;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
+      background: #cfd8ee;
     }
 
     .card h2 {
@@ -74,18 +75,19 @@
     .card p {
       color: #444;
       font-size: 14px;
-      margin: 0 15px 12px;
+      margin: 0 15px 14px;
+      line-height: 1.4;
     }
 
     .card a {
       display: inline-block;
-      padding: 6px 12px;
+      padding: 7px 14px;
       color: #002366;
       font-weight: bold;
       text-decoration: none;
       border: 1px solid #002366;
       border-radius: 6px;
-      transition: background 0.2s, color 0.2s;
+      transition: all 0.2s ease;
     }
 
     .card a:hover {
@@ -93,21 +95,23 @@
       color: #fff;
     }
 
+    /* --- NAVIGATION --- */
     .page-navigation {
+      background: #f2f4f8;
+      text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid #cdd3e2;
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #f1f3f7;
-      text-align: center;
-      padding: 10px 0;
-      border-top: 1px solid #ccc;
+      font-size: 15px;
     }
 
     .page-navigation a {
-      color: #002366;
+      color: #0047ab;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: bold;
       margin: 0 10px;
     }
 
@@ -117,15 +121,18 @@
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: #f1f3f7;
+      padding: 35px 15px 90px;
       font-size: 14px;
       color: #555;
-      margin-top: 60px;
     }
 
     body {
-      margin-bottom: 70px;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .card { width: 90%; }
+      h1 { font-size: 24px; }
     }
   </style>
 </head>
@@ -134,13 +141,13 @@
   <header>
     <h1>Zachary Parker | Baseball Analytics Portfolio</h1>
     <p class="subhead">
-      A collection of original baseball analytics projects exploring player performance, situational trends, and data-driven insights using Statcast and Python.
+      A collection of data-driven projects analyzing player performance, situational hitting, and emerging trends across Major League Baseball using Statcast and Python.
     </p>
   </header>
 
   <main class="projects">
 
-    <!-- New Project Card -->
+    <!-- Automated Strike Zone Analysis -->
     <div class="card">
       <img src="projects/abs_zone_impact_2024/data/ABS%20vs%20Human%20Umpire%20Heat%20Map.png" alt="Automated Strike Zone Analysis" />
       <h2>Automated Strike Zone Analysis</h2>
@@ -148,7 +155,7 @@
       <a href="projects/abs_zone_impact_2024/index.html">View Analysis →</a>
     </div>
 
-    <!-- RISP Project -->
+    <!-- 2025 RISP + High-Leverage OPS -->
     <div class="card">
       <img src="projects/clutch_risp_2025/data/RISP_Leverage_Preview.png" alt="2025 RISP + High-Leverage OPS" />
       <h2>2025 RISP + High-Leverage OPS</h2>
@@ -156,26 +163,25 @@
       <a href="projects/clutch_risp_2025/index.html">View Analysis →</a>
     </div>
 
-    <!-- Stolen Bases Project -->
+    <!-- 2024–2025 Stolen Base Trends -->
     <div class="card">
       <img src="projects/stolen_bases_2024_2025/data/Total_Stolen_Bases_2025.png" alt="2024–2025 Stolen Base Trends" />
       <h2>2024–2025 Stolen Base Trends</h2>
-      <p>Tracking year-over-year stolen base totals, player increases and decreases, and broader league trends.</p>
+      <p>Tracking year-over-year stolen base totals, player increases and decreases, and broader league-level speed patterns.</p>
       <a href="projects/stolen_bases_2024_2025/index.html">View Analysis →</a>
     </div>
 
-    <!-- Friday vs Sunday Project -->
+    <!-- Friday vs Sunday Hitting Analysis -->
     <div class="card">
       <img src="projects/sundays_vs_fridays/data/Friday_vs_Sunday_Ops_Distribution.png" alt="Friday vs Sunday Hitting Analysis" />
       <h2>Friday vs Sunday Hitting Analysis</h2>
-      <p>Comparing player performance and OPS distribution on Friday versus Sunday to assess timing and fatigue effects.</p>
+      <p>Comparing player OPS and situational hitting between Friday and Sunday games to evaluate fatigue and preparation effects.</p>
       <a href="projects/sundays_vs_fridays/index.html">View Analysis →</a>
     </div>
 
   </main>
 
   <div class="page-navigation">
-    <span></span>
     <a href="projects/abs_zone_impact_2024/index.html">Next →</a>
   </div>
 
