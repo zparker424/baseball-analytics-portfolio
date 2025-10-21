@@ -5,110 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Friday vs Sunday Hitting Analysis</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9fafc;
-      color: #111;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 15px 10px;
-    }
-
-    h1 {
-      color: #002366;
-      font-size: 24px;
-      margin-bottom: 5px;
-    }
-
-    p.subhead {
-      color: #444;
-      font-size: 15px;
-      margin-top: 0;
-    }
-
-    h2.section-title {
-      text-align: center;
-      font-size: 18px;
-      color: #002366;
-      font-weight: bold;
-      margin-top: 40px;
-    }
-
-    .chart {
-      display: block;
-      margin: 25px auto;
-      max-width: 800px;
-      width: 95%;
-      border-radius: 10px;
-      background: #fff;
-      padding: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    .page-navigation {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #f1f3f7;
-      text-align: center;
-      padding: 10px 0;
-      border-top: 1px solid #ccc;
-    }
-
-    .page-navigation a {
-      color: #002366;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-    }
-
-    .page-navigation a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #f1f3f7;
-      font-size: 14px;
-      color: #555;
-      margin-top: 100px;
-    }
-
-    body {
-      margin-bottom: 70px;
-    }
+    body { font-family: Arial, sans-serif; background-color: #f9fafc; color: #111; margin: 0; padding: 0; }
+    header { text-align: center; padding: 40px 15px 10px; }
+    h1 { color: #002366; font-size: 24px; margin-bottom: 5px; }
+    p.subhead { color: #444; font-size: 15px; margin-top: 0; }
+    h2.section-title { text-align: center; font-size: 18px; color: #002366; font-weight: bold; margin-top: 40px; }
+    p.subtitle { text-align: center; color: #444; font-size: 14px; margin: 4px 0 0; }
+    .chart { display: block; margin: 25px auto; max-width: 800px; width: 95%; border-radius: 10px; background: #fff; padding: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .page-navigation { position: fixed; bottom: 0; left: 0; width: 100%; background: #f1f3f7; text-align: center; padding: 10px 0; border-top: 1px solid #ccc; }
+    .page-navigation a { color: #002366; text-decoration: none; font-weight: bold; margin: 0 10px; }
+    .page-navigation a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 30px; background: #f1f3f7; font-size: 14px; color: #555; margin-top: 100px; }
+    body { margin-bottom: 70px; }
   </style>
 </head>
 
 <body>
   <header>
     <h1>Friday vs Sunday Hitting Analysis</h1>
-    <p class="subhead">Analyzing OPS trends and player performance differences between Friday and Sunday MLB games.</p>
+    <p class="subhead">Comparing OPS distributions and player level deltas between Friday and Sunday games to pick up schedule or recovery effects.</p>
   </header>
 
   <h2 class="section-title">OPS Distribution</h2>
+  <p class="subtitle">League distribution split by day to test for systematic differences in run production.</p>
   <img src="data/Friday_vs_Sunday_Ops_Distribution.png" alt="OPS Distribution Chart" class="chart" />
 
   <h2 class="section-title">Top 10 Outlier Players by OPS Change</h2>
+  <p class="subtitle">Players with the largest day based OPS shifts that may warrant closer role or matchup context review.</p>
   <img src="data/Top_10_Outlier_Players_by_OPS.png" alt="Top 10 Outlier OPS Chart" class="chart" />
 
   <h2 class="section-title">Distribution of OPS Differences</h2>
+  <p class="subtitle">Difference histogram to gauge whether observed changes are broad based or driven by tails.</p>
   <img src="data/Distribution_of_OPS_Differences.png" alt="OPS Differences Chart" class="chart" />
 
   <h2 class="section-title">Mean Stat Comparison</h2>
-  <!-- ✅ Updated reference here -->
-  <img src="data/Chart_Mean_Stat_Comparison1.png" alt="Mean Stat Comparison: Friday vs Sunday" class="chart" />
+  <p class="subtitle">Side by side averages that summarize core offensive metrics for Friday versus Sunday slates.</p>
+  <img src="data/Chart_Mean_Stat_Comparison1.png" alt="Mean Stat Comparison Friday vs Sunday" class="chart" />
 
-  <!-- ✅ Bottom navigation bar -->
   <div class="page-navigation">
     <a href="../stolen_bases_2024_2025/index.html">← Back</a> |
-    <a href="../../index.html">Home Page</a>
+    <a href="../../index.html">Home Page</a> |
+    <a href="../abs_zone_impact_2024/index.html">Automated Strike Zone Analysis</a> |
+    <a href="../clutch_risp_2025/index.html">2025 RISP + High-Leverage OPS</a> |
+    <a href="../stolen_bases_2024_2025/index.html">2024–2025 Stolen Base Trends</a> |
+    <a href="../abs_zone_impact_2024/index.html">Next →</a>
   </div>
 
   <footer>

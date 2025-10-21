@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zachary Parker – Baseball Analytics Portfolio</title>
+  <title>Zachary Parker | Baseball Analytics Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,87 +15,105 @@
 
     header {
       text-align: center;
-      background: #fff;
-      padding: 50px 15px 20px;
-      border-bottom: 1px solid #ddd;
+      padding: 40px 15px 10px;
     }
 
     h1 {
       color: #002366;
-      font-size: 30px;
-      margin-bottom: 5px;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 6px;
     }
 
     p.subhead {
       color: #444;
-      font-size: 16px;
-      margin-top: 5px;
+      font-size: 15px;
+      margin-top: 0;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .projects {
+    main.projects {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      padding: 40px 15px 120px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 10px 80px;
     }
 
     .card {
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      max-width: 600px;
-      width: 100%;
+      width: 300px;
+      padding-bottom: 15px;
       text-align: center;
-      overflow: hidden;
-      transition: transform 0.2s;
-      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .card:hover { transform: translateY(-4px); }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
 
-    /* Slightly larger, zoomed-out preview area */
-    .card img,
-    .preview-iframe {
+    .card img {
       width: 100%;
-      height: 300px;             /* up from 250 */
-      object-fit: contain;       /* show entire image cleanly */
-      border-bottom: 3px solid #0047ab;
-      background: #fff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .preview-iframe iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 300px;
-      border: 0;
-      pointer-events: none;
-      transform: scale(0.92);      /* subtle zoom-out effect */
-      transform-origin: center;
+    .card h2 {
+      color: #002366;
+      font-size: 18px;
+      margin: 12px 0 6px;
     }
 
-    .card h2 { font-size: 20px; color: #002366; margin: 20px 0 8px; }
-    .card p { font-size: 14px; color: #555; margin-bottom: 15px; padding: 0 20px; }
-    .card a { display: inline-block; margin-bottom: 20px; color: #0066cc; text-decoration: none; font-weight: bold; }
-    .card a:hover { text-decoration: underline; }
+    .card p {
+      color: #444;
+      font-size: 14px;
+      margin: 0 15px 12px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 6px 12px;
+      color: #002366;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid #002366;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .card a:hover {
+      background: #002366;
+      color: #fff;
+    }
 
     .page-navigation {
       position: fixed;
-      bottom: 0; left: 0; width: 100%;
-      background: #002366;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 12px 30px;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-      z-index: 10;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #f1f3f7;
+      text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
     }
 
     .page-navigation a {
-      color: #fff; text-decoration: none; font-weight: 600; font-size: 15px;
-      transition: opacity 0.3s;
+      color: #002366;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
     }
 
-    .page-navigation a:hover { opacity: 0.8; }
+    .page-navigation a:hover {
+      text-decoration: underline;
+    }
 
     footer {
       text-align: center;
@@ -103,47 +121,62 @@
       background: #f1f3f7;
       font-size: 14px;
       color: #555;
-      margin-top: 100px;
+      margin-top: 60px;
     }
 
-    body { margin-bottom: 70px; }
+    body {
+      margin-bottom: 70px;
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Zachary Parker – Baseball Analytics Portfolio</h1>
-    <p class="subhead">Exploring data-driven insights into player performance, situational hitting, and game strategy.</p>
+    <h1>Zachary Parker | Baseball Analytics Portfolio</h1>
+    <p class="subhead">
+      A collection of original baseball analytics projects exploring player performance, situational trends, and data-driven insights using Statcast and Python.
+    </p>
   </header>
 
   <main class="projects">
+
+    <!-- New Project Card -->
     <div class="card">
-      <div class="preview-iframe">
-        <iframe src="projects/clutch_risp_2025/data/clutch_scatter_all%20copy.html" title="RISP Chart Preview"></iframe>
-      </div>
+      <img src="projects/abs_zone_impact_2024/data/ABS%20vs%20Human%20Umpire%20Heat%20Map.png" alt="Automated Strike Zone Analysis" />
+      <h2>Automated Strike Zone Analysis</h2>
+      <p>Visualizing how human umpire calls compare to the ABS zone across pitch types, innings, and batter handedness.</p>
+      <a href="projects/abs_zone_impact_2024/index.html">View Analysis →</a>
+    </div>
+
+    <!-- RISP Project -->
+    <div class="card">
+      <img src="projects/clutch_risp_2025/data/RISP_Leverage_Preview.png" alt="2025 RISP + High-Leverage OPS" />
       <h2>2025 RISP + High-Leverage OPS</h2>
-      <p>Comparing clutch vs overall OPS across MLB hitters.</p>
+      <p>Analyzing clutch performance versus overall OPS to highlight hitters who excel or regress in high-pressure moments.</p>
       <a href="projects/clutch_risp_2025/index.html">View Analysis →</a>
     </div>
 
+    <!-- Stolen Bases Project -->
     <div class="card">
-      <img src="projects/stolen_bases_2024_2025/data/Total_Stolen_Bases_2025.png" alt="Stolen Bases Chart">
+      <img src="projects/stolen_bases_2024_2025/data/Total_Stolen_Bases_2025.png" alt="2024–2025 Stolen Base Trends" />
       <h2>2024–2025 Stolen Base Trends</h2>
-      <p>Tracking year-over-year changes in MLB stolen-base totals.</p>
+      <p>Tracking year-over-year stolen base totals, player increases and decreases, and broader league trends.</p>
       <a href="projects/stolen_bases_2024_2025/index.html">View Analysis →</a>
     </div>
 
+    <!-- Friday vs Sunday Project -->
     <div class="card">
-      <img src="projects/sundays_vs_fridays/data/Friday_vs_Sunday_Ops_Distribution.png" alt="OPS Distribution Chart">
+      <img src="projects/sundays_vs_fridays/data/Friday_vs_Sunday_Ops_Distribution.png" alt="Friday vs Sunday Hitting Analysis" />
       <h2>Friday vs Sunday Hitting Analysis</h2>
-      <p>Comparing OPS distributions and player performance across game days.</p>
+      <p>Comparing player performance and OPS distribution on Friday versus Sunday to assess timing and fatigue effects.</p>
       <a href="projects/sundays_vs_fridays/index.html">View Analysis →</a>
     </div>
+
   </main>
 
   <div class="page-navigation">
     <span></span>
-    <a href="projects/clutch_risp_2025/index.html">Next →</a>
+    <a href="projects/abs_zone_impact_2024/index.html">Next →</a>
   </div>
 
   <footer>

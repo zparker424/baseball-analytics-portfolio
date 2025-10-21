@@ -5,150 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2025 RISP + High-Leverage OPS Analysis</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9fafc;
-      color: #111;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #002366;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    p {
-      text-align: center;
-      max-width: 700px;
-      margin: 10px auto 30px;
-      color: #555;
-      font-size: 15px;
-    }
-
-    /* Section titles consistent with main site headers */
-    h2.section-title {
-      text-align: center;
-      color: #002366;
-      font-size: 20px;
-      font-weight: 700;
-      margin: 42px 0 12px;
-      letter-spacing: 0.2px;
-    }
-
-    /* Interactive chart container */
-    .iframe-wrap {
-      position: relative;
-      width: 95%;
-      max-width: 1100px;
-      margin: 24px auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-    }
+    body { font-family: Arial, sans-serif; background: #f9fafc; color: #111; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #002366; font-size: 24px; font-weight: 700; }
+    p { text-align: center; max-width: 700px; margin: 10px auto 30px; color: #555; font-size: 15px; }
+    h2.section-title { text-align: center; color: #002366; font-size: 20px; font-weight: 700; margin: 42px 0 6px; letter-spacing: 0.2px; }
+    p.subtitle { text-align: center; color: #444; font-size: 14px; margin: 4px 0 0; }
+    .iframe-wrap { position: relative; width: 95%; max-width: 1100px; margin: 16px auto 24px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background: #fff; border: 1px solid #e5e7eb; }
     .iframe-wrap::before { content: ""; display: block; padding-top: 62%; }
-    .iframe-wrap iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-      background: #fff;
-    }
-
-    /* Static chart style */
-    .chart {
-      display: block;
-      margin: 24px auto;
-      max-width: 95%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      background: #fff;
-      border: 1px solid #e5e7eb;
-    }
-
-    /* Bottom navigation bar */
-    .page-navigation {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      row-gap: 6px;
-      column-gap: 10px;
-      background: #f1f3f7;
-      padding: 18px 10px;
-      margin-top: 70px;
-      border-top: 1px solid #ddd;
-      font-size: 15px;
-      text-align: center;
-    }
-    .page-navigation a {
-      color: #0047ab;
-      text-decoration: none;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+    .iframe-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+    .chart { display: block; margin: 16px auto 24px; max-width: 95%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #fff; border: 1px solid #e5e7eb; }
+    .page-navigation { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; row-gap: 6px; column-gap: 10px; background: #f1f3f7; padding: 18px 10px; margin-top: 70px; border-top: 1px solid #ddd; font-size: 15px; text-align: center; }
+    .page-navigation a { color: #0047ab; text-decoration: none; font-weight: 600; white-space: nowrap; }
     .page-navigation a:hover { color: #002366; text-decoration: underline; }
-    .page-navigation .current {
-      color: #111;
-      font-weight: 700;
-      border-bottom: 2px solid #0047ab;
-      cursor: default;
-      white-space: nowrap;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      background: #f9fafc;
-      font-size: 14px;
-      color: #777;
-    }
-
-    @media (max-width: 750px) {
-      .page-navigation {
-        flex-direction: column;
-        gap: 6px;
-      }
-    }
+    .page-navigation .current { color: #111; font-weight: 700; border-bottom: 2px solid #0047ab; cursor: default; white-space: nowrap; }
+    footer { text-align: center; padding: 30px 15px; background: #f9fafc; font-size: 14px; color: #777; }
+    @media (max-width: 750px) { .page-navigation { flex-direction: column; gap: 6px; } }
   </style>
 </head>
 
 <body>
   <h1>2025 RISP + High-Leverage OPS Analysis</h1>
-  <p>Analyzing clutch performance vs overall OPS across MLB hitters.</p>
+  <p>Comparing OPS in runners in scoring position and high leverage spots to overall OPS in order to flag hitters whose outcomes shift materially with pressure and base state.</p>
 
-  <!-- Section 1: Interactive Charts -->
   <h2 class="section-title">Interactive Charts</h2>
-
+  <p class="subtitle">Scatter views that relate clutch OPS to overall OPS for all hitters and selected teams.</p>
   <div class="iframe-wrap">
-    <iframe src="data/clutch_scatter_all%20copy.html" title="Interactive RISP Scatter (All Hitters)"></iframe>
+    <iframe src="data/clutch_scatter_all%20copy.html" title="Interactive RISP Scatter All Hitters"></iframe>
+  </div>
+  <div class="iframe-wrap">
+    <iframe src="data/clutch_scatter_yankees_2025%20copy.html" title="Interactive RISP Scatter Yankees 2025"></iframe>
   </div>
 
-  <div class="iframe-wrap">
-    <iframe src="data/clutch_scatter_yankees_2025%20copy.html" title="Interactive RISP Scatter (Yankees 2025)"></iframe>
-  </div>
-
-  <!-- Section 2: Team Comparisons -->
   <h2 class="section-title">Team Comparisons</h2>
-
+  <p class="subtitle">Team level distributions highlighting where clubs over or under perform in clutch situations relative to baseline.</p>
   <img src="data/Mets_2025_Clutch_Performance.png" class="chart" alt="Mets Clutch Performance">
   <img src="data/Tigers_2025_Clutch_Performance.png" class="chart" alt="Tigers Clutch Performance">
   <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch Performance">
 
-  <!-- Section 3: Player-Level Analysis -->
-  <h2 class="section-title">Player-Level Analysis</h2>
-
+  <h2 class="section-title">Player Level Analysis</h2>
+  <p class="subtitle">Player level leaders and laggards to identify extreme clutch shifts that may regress or persist.</p>
   <img src="data/Top_15_Hitters_in_Clutch.png" class="chart" alt="Top 15 Hitters in Clutch">
   <img src="data/Top_Bottom_10_Hitters_by_Clutch.png" class="chart" alt="Top and Bottom 10 Hitters by Clutch">
   <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart" alt="Yankees Overall vs Clutch">
 
-  <!-- Unified bottom navigation -->
   <nav class="page-navigation" aria-label="Page navigation">
-    <a href="../../index.html">← Back</a> |
+    <a href="../abs_zone_impact_2024/index.html">← Back</a> |
     <a href="../../index.html">Home Page</a> |
     <span class="current">2025 RISP + High-Leverage OPS</span> |
     <a href="../stolen_bases_2024_2025/index.html">2024–2025 Stolen Base Trends</a> |
@@ -160,7 +61,6 @@
     © 2025 Zachary Parker | Built with Python &amp; Plotly
   </footer>
 
-  <!-- ✅ Center Plotly titles & remove extra right margin -->
   <script>
     function restylePlotlyIn(frame) {
       try {
@@ -168,26 +68,16 @@
         const d = w.document;
         const graphs = d.querySelectorAll('.plotly-graph-div');
         if (!graphs.length || !w.Plotly) return;
-
         graphs.forEach(div => {
           const hasColorbar = d.querySelector('.cbtitle') || d.querySelector('.colorbar');
-          const rightMargin = hasColorbar ? 40 : 10; // tighter margin if no legend
+          const rightMargin = hasColorbar ? 40 : 10;
           w.Plotly.relayout(div, {
-            'title.x': 0.5,
-            'title.font.size': 18,
-            'title.font.family': 'Arial, sans-serif',
-            'title.font.color': '#002366',
-            'margin.l': 60,
-            'margin.r': rightMargin,  // ✅ removes excess space
-            'margin.t': 80,
-            'margin.b': 60
+            'title.x': 0.5, 'title.font.size': 18, 'title.font.family': 'Arial, sans-serif', 'title.font.color': '#002366',
+            'margin.l': 60, 'margin.r': rightMargin, 'margin.t': 80, 'margin.b': 60
           });
         });
-      } catch (e) {
-        console.warn('Plotly restyle failed:', e);
-      }
+      } catch (e) { console.warn('Plotly restyle failed:', e); }
     }
-
     document.querySelectorAll('.iframe-wrap iframe').forEach(frame => {
       frame.addEventListener('load', () => restylePlotlyIn(frame));
     });
