@@ -8,22 +8,39 @@
 </head>
 <body>
   <header>
-    <h1>2025 RISP + High-Leverage OPS Analysis</h1>
+    <h1 class="page-title">2025 RISP + High-Leverage OPS Analysis</h1>
     <p class="subhead">
-      Comparing OPS in runners-in-scoring-position and high-leverage contexts to overall OPS 
+      Comparing OPS in runners-in-scoring-position and high-leverage contexts to overall OPS
       to identify hitters whose performance shifts under pressure.
     </p>
   </header>
 
   <h2 class="section-title">Interactive Charts</h2>
-  <p class="subtitle">Scatter plots comparing clutch OPS to overall OPS across qualified hitters.</p>
+  <p class="subtitle">
+    Scatter plots comparing clutch OPS to overall OPS across qualified hitters and selected teams.
+  </p>
   <div class="iframe-wrap">
-    <iframe src="data/clutch_scatter_all%20copy.html"></iframe>
+    <iframe src="data/clutch_scatter_all%20copy.html" title="All Qualified Hitters"></iframe>
+  </div>
+  <div class="iframe-wrap">
+    <iframe src="data/clutch_scatter_yankees_2025%20copy.html" title="Yankees 2025 Clutch OPS"></iframe>
   </div>
 
   <h2 class="section-title">Team Comparisons</h2>
-  <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart">
-  <img src="data/Top_15_Hitters_in_Clutch.png" class="chart">
+  <p class="subtitle">
+    Team-level distributions showing clutch vs. overall performance for key franchises.
+  </p>
+  <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart" alt="Yankees 2025 Clutch vs Overall" />
+  <img src="data/Mets_2025_Clutch_Performance.png" class="chart" alt="Mets Clutch Performance" />
+  <img src="data/Tigers_2025_Clutch_Performance.png" class="chart" alt="Tigers Clutch Performance" />
+  <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch Performance" />
+
+  <h2 class="section-title">Player-Level Analysis</h2>
+  <p class="subtitle">
+    Individual hitters showing the largest clutch-performance deltas relative to overall production.
+  </p>
+  <img src="data/Top_15_Hitters_in_Clutch.png" class="chart" alt="Top 15 Hitters in Clutch" />
+  <img src="data/Top_Bottom_10_Hitters_by_Clutch.png" class="chart" alt="Top and Bottom 10 Hitters by Clutch" />
 
   <div class="page-navigation">
     <a href="../abs_zone_impact_2024/index.html">← Back</a> |
@@ -33,6 +50,6 @@
     <a href="../sundays_vs_fridays/index.html">Friday vs Sunday Hitting Analysis</a>
   </div>
 
-  <footer>© 2025 Zachary Parker | Built with Python & Plotly</footer>
+  <footer>© 2025 Zachary Parker | Built with Python &amp; Plotly</footer>
 </body>
 </html>
