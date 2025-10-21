@@ -10,63 +10,29 @@
   <header>
     <h1>2025 RISP + High-Leverage OPS Analysis</h1>
     <p class="subhead">
-      Comparing OPS in runners-in-scoring-position and high-leverage contexts to overall OPS to identify hitters whose performance shifts under pressure.
+      Comparing OPS in runners-in-scoring-position and high-leverage contexts to overall OPS 
+      to identify hitters whose performance shifts under pressure.
     </p>
   </header>
 
   <h2 class="section-title">Interactive Charts</h2>
-  <p class="subtitle">Scatter plots relating clutch OPS to overall OPS across qualified hitters and selected teams.</p>
+  <p class="subtitle">Scatter plots comparing clutch OPS to overall OPS across qualified hitters.</p>
   <div class="iframe-wrap">
-    <iframe src="data/clutch_scatter_all%20copy.html" title="Interactive RISP Scatter All Hitters"></iframe>
-  </div>
-  <div class="iframe-wrap">
-    <iframe src="data/clutch_scatter_yankees_2025%20copy.html" title="Interactive RISP Scatter Yankees 2025"></iframe>
+    <iframe src="data/clutch_scatter_all%20copy.html"></iframe>
   </div>
 
   <h2 class="section-title">Team Comparisons</h2>
-  <p class="subtitle">Team-level distributions highlighting which clubs exceed or underperform in clutch situations relative to baseline.</p>
-  <img src="data/Mets_2025_Clutch_Performance.png" class="chart" alt="Mets Clutch Performance">
-  <img src="data/Tigers_2025_Clutch_Performance.png" class="chart" alt="Tigers Clutch Performance">
-  <img src="data/Reds_2025_Clutch_Performance.png" class="chart" alt="Reds Clutch Performance">
-
-  <h2 class="section-title">Player Level Analysis</h2>
-  <p class="subtitle">Leaders and laggards showing the largest clutch-performance deltas for regression evaluation.</p>
-  <img src="data/Top_15_Hitters_in_Clutch.png" class="chart" alt="Top 15 Hitters in Clutch">
-  <img src="data/Top_Bottom_10_Hitters_by_Clutch.png" class="chart" alt="Top and Bottom 10 Hitters by Clutch">
-  <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart" alt="Yankees Overall vs Clutch">
+  <img src="data/Yankees_2025_Overall_vs_Clutch.png" class="chart">
+  <img src="data/Top_15_Hitters_in_Clutch.png" class="chart">
 
   <div class="page-navigation">
     <a href="../abs_zone_impact_2024/index.html">← Back</a> |
     <a href="../../index.html">Home Page</a> |
     <span class="current">2025 RISP + High-Leverage OPS</span> |
     <a href="../stolen_bases_2024_2025/index.html">2024–2025 Stolen Base Trends</a> |
-    <a href="../sundays_vs_fridays/index.html">Friday vs Sunday Hitting Analysis</a> |
-    <a href="../stolen_bases_2024_2025/index.html">Next →</a>
+    <a href="../sundays_vs_fridays/index.html">Friday vs Sunday Hitting Analysis</a>
   </div>
 
-  <footer>© 2025 Zachary Parker | Built with Python &amp; Plotly</footer>
-
-  <script>
-    // Keep your Plotly restyle for consistent margins/titles
-    function restylePlotlyIn(frame) {
-      try {
-        const w = frame.contentWindow, d = w.document;
-        const graphs = d.querySelectorAll('.plotly-graph-div');
-        if (!graphs.length || !w.Plotly) return;
-        graphs.forEach(div => {
-          const hasColorbar = d.querySelector('.cbtitle,.colorbar');
-          w.Plotly.relayout(div, {
-            'title.x': 0.5,
-            'title.font.size': 18,
-            'title.font.family': 'Arial, sans-serif',
-            'title.font.color': '#001a66',
-            'margin.l': 60, 'margin.r': hasColorbar ? 40 : 10, 'margin.t': 80, 'margin.b': 60
-          });
-        });
-      } catch (e) { /* ignore */ }
-    }
-    document.querySelectorAll('.iframe-wrap iframe')
-      .forEach(f => f.addEventListener('load', () => restylePlotlyIn(f)));
-  </script>
+  <footer>© 2025 Zachary Parker | Built with Python & Plotly</footer>
 </body>
 </html>
