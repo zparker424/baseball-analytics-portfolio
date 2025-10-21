@@ -1,12 +1,12 @@
 /* =========================================
    Zachary Parker | Baseball Analytics Portfolio
-   FINAL GLOBAL STYLESHEET — OCT 2025
+   FINAL ROYAL PURPLE THEME — OCT 2025
    ========================================= */
 
 /* --- GLOBAL --- */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #cfdafe 0%, #e6ecff 70%);
+  background: linear-gradient(180deg, #d8cffc 0%, #f1e8ff 70%);
   color: #111;
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ header {
 }
 
 h1 {
-  color: #002366;
+  color: #4b0082;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 6px;
@@ -37,7 +37,7 @@ p.subhead {
 h2.section-title {
   text-align: center;
   font-size: 18px;
-  color: #002366;
+  color: #4b0082;
   font-weight: bold;
   margin-top: 40px;
 }
@@ -58,8 +58,8 @@ p.subtitle {
   border-radius: 10px;
   background: #fff;
   padding: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  border: 1px solid #c4cff7;
+  box-shadow: 0 4px 16px rgba(75, 0, 130, 0.15);
+  border: 1px solid #d4c1ff;
 }
 
 .iframe-wrap {
@@ -68,10 +68,10 @@ p.subtitle {
   max-width: 1000px;
   margin: 20px auto 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(75, 0, 130, 0.15);
   overflow: hidden;
   background: #fff;
-  border: 1px solid #c4cff7;
+  border: 1px solid #d4c1ff;
 }
 .iframe-wrap::before {
   content: "";
@@ -100,29 +100,29 @@ main.projects {
 .card {
   background: #ffffff;
   border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(75, 0, 130, 0.15);
   width: 310px;
   overflow: hidden;
   text-align: center;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
-  border: 1px solid #c4cff7;
+  border: 1px solid #d4c1ff;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  border-color: #0047ab;
+  box-shadow: 0 6px 20px rgba(75, 0, 130, 0.25);
+  border-color: #4b0082;
 }
 
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  background: #cfd8ee;
+  background: #e8dcff;
 }
 
 .card h2 {
-  color: #002366;
+  color: #4b0082;
   font-size: 18px;
   margin: 12px 0 6px;
 }
@@ -137,24 +137,24 @@ main.projects {
 .card a {
   display: inline-block;
   padding: 7px 14px;
-  color: #002366;
+  color: #4b0082;
   font-weight: bold;
   text-decoration: none;
-  border: 1px solid #002366;
+  border: 1px solid #4b0082;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .card a:hover {
-  background: #002366;
+  background: #4b0082;
   color: #fff;
 }
 
-/* --- NAVIGATION BAR (Above Footer) --- */
+/* --- NAVIGATION BAR --- */
 .page-navigation {
   position: static;
-  background: #e3e7f4;
-  border-top: 2px solid #c2c9e2;
+  background: #ece5fa;
+  border-top: 2px solid #d4c1ff;
   padding: 14px 0;
   margin-top: 50px;
   letter-spacing: 0.3px;
@@ -165,7 +165,7 @@ main.projects {
 }
 
 .page-navigation a {
-  color: #0047ab;
+  color: #4b0082;
   font-weight: 700;
   text-decoration: none;
   margin: 0 10px;
@@ -174,7 +174,7 @@ main.projects {
 
 .page-navigation a:hover {
   text-decoration: underline;
-  color: #002f75;
+  color: #360060;
 }
 
 .page-navigation .current {
