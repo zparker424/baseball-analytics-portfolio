@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>Friday vs Sunday Hitting Analysis</h1>
+    <h1 class="page-title">Friday vs Sunday Hitting Analysis</h1>
     <p class="subhead">
       Evaluating OPS differences and situational performance between Friday and Sunday games
       to uncover fatigue or preparation-based impacts on offensive consistency.
@@ -16,20 +16,44 @@
   </header>
 
   <h2 class="section-title">OPS Distribution by Day</h2>
-  <p class="subtitle">League-wide OPS spread by game day to identify consistency and variance trends.</p>
-  <img src="data/Friday_vs_Sunday_Ops_Distribution.png" class="chart" alt="OPS Distribution by Day" />
+  <p class="subtitle">
+    League-wide OPS spread by game day to test for systematic shifts in performance.
+  </p>
+  <img
+    src="data/Friday_vs_Sunday_OPS_Distribution.png"
+    alt="OPS Distribution by Day"
+    class="chart"
+  />
 
   <h2 class="section-title">Top 10 Outliers by OPS Change</h2>
-  <p class="subtitle">Hitters with the largest Friday-to-Sunday OPS swings.</p>
-  <img src="data/Top_10_Outlier_Players_by_OPS.png" class="chart" alt="Top 10 Outliers by OPS Change" />
+  <p class="subtitle">
+    Hitters with the largest Friday-to-Sunday OPS swings.
+  </p>
+  <img
+    src="data/Top_10_Outlier_Players_by_OPS.png"
+    alt="Top 10 Outliers by OPS Change"
+    class="chart"
+  />
 
   <h2 class="section-title">Distribution of OPS Differences</h2>
-  <p class="subtitle">All player-level ΔOPS values to understand overall distribution.</p>
-  <img src="data/Distribution_of_OPS_Differences.png" class="chart" alt="Distribution of OPS Differences" />
+  <p class="subtitle">
+    Full player-level distribution of ΔOPS (Sunday − Friday).
+  </p>
+  <img
+    src="data/Distribution_of_OPS_Differences.png"
+    alt="Distribution of OPS Differences"
+    class="chart"
+  />
 
   <h2 class="section-title">Mean Stat Comparison</h2>
-  <p class="subtitle">Friday vs Sunday average values for key offensive metrics.</p>
-  <img src="data/Chart_Mean_Stat_Comparison1.png" class="chart" alt="Mean Stat Comparison" />
+  <p class="subtitle">
+    Average key metrics by day across qualified hitters.
+  </p>
+  <img
+    src="data/Chart_Mean_Stat_Comparison1.png"
+    alt="Mean Stat Comparison"
+    class="chart"
+  />
 
   <div class="page-navigation">
     <a href="../stolen_bases_2024_2025/index.html">← Back</a> |
@@ -40,6 +64,8 @@
     <span class="current">Friday vs Sunday Hitting Analysis</span>
   </div>
 
-  <footer>© 2025 Zachary Parker | Built with Python &amp; Plotly</footer>
+  <footer>
+    © 2025 Zachary Parker | Built with Python &amp; Plotly
+  </footer>
 </body>
 </html>
